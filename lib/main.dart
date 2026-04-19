@@ -41,7 +41,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   // --- FILE PICKER LOGIC ---
   Future<void> _pickFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result = await FilePicker.pickFiles();
 
     if (result != null) {
       setState(() {
@@ -77,7 +77,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
       // 3. Send HTTP POST Request
       final response = await http.post(
         Uri.parse(apiUrl),
-        headers: {"Content-Type": "application/json"},
+        headers: {"Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true"
+        },
+        
         body: jsonEncode(requestBody),
       ).timeout(const Duration(seconds: 30)); // 30-second timeout
 
