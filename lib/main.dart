@@ -66,7 +66,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     try {
       // ⚠️ REPLACE THIS WITH YOUR CURRENT NGROK URL FROM GOOGLE COLAB
-      const String apiUrl = 'https://YOUR_NGROK_LINK.ngrok-free.dev/scan';
+      const String apiUrl = 'https://shanelle-nonsensationalistic-minna.ngrok-free.dev/scan';
 
       // 2. Build the Payload
       final Map<String, dynamic> requestBody = {
